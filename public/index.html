@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= webpackConfig.name %></title>
+  <script type="text/javascript" src='//webapi.amap.com/maps?v=2.0&key=db8fcd90dcf0cff70e73875a8c6af418'></script>
+  <!-- UI组件库 1.0 -->
+  <script src="//webapi.amap.com/ui/1.1/main.js?v=1.1.1"></script>
+  <!--<script src="/pdfmake.js"></script>-->
+  <!--<script src="/vfs_fonts.js"></script>-->
+  <script>
+    window.onload = function () {
+      function loadScript(src, callback) {
+        const script = document.createElement('script')
+        const head = document.getElementsByTagName('head')[0]
+        script.type = 'text/javascript'
+        script.charset = 'UTF-8'
+        script.src = src
+        if (script.addEventListener) {
+          script.addEventListener('load', function () {
+            callback && callback()
+          }, false)
+        } else if (script.attachEvent) {
+          script.attachEvent('onreadystatechange', function () {
+            var target = window.event.srcElement
+            if (target.readyState === 'loaded') {
+              callback && callback()
+            }
+          })
+        }
+        head.appendChild(script)
+      }
+      loadScript(window.location.origin + '/pdfmake.js', () => {
+        console.log('pdfmake')
+        loadScript(window.location.origin + '/vfs_fonts.js', () => {
+          console.log('vfs_fonts')
+          window.pdfMake = pdfMake
+          window.pdfMake.fonts = {
+            SourceHanSansCN: {
+              normal: "SourceHanSansCN-Normal.ttf",
+              bold: "SourceHanSansCN-Normal.ttf",
+              italics: "SourceHanSansCN-Normal.ttf",
+              bolditalics: "SourceHanSansCN-Normal.ttf"
+            }
+          }
+        })
+      })
+      console.log('window onload')
+    }
+  </script>
+</head>
+<body>
+<noscript>
+  <strong>We're sorry but <%= webpackConfig.name %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>

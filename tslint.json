@@ -1,0 +1,58 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "tests/**",
+      "mock/**",
+      "demo/**",
+      "src/assets/**",
+      "src/components/**",
+      "src/directives/**",
+      "src/filters/**",
+      "src/icons/**",
+      "src/layout/**",
+      "src/pwa/**",
+      "src/styles/**",
+      "src/utils/**",
+      "src/views/charts/**",
+      "src/views/clipboard/**",
+      "src/views/components-demo/**",
+      "src/views/dashboard/**",
+      "src/views/error-log/**",
+      "src/views/error-page/**",
+      "src/views/example/**",
+      "src/views/excel/**",
+      "src/views/guide/**",
+      "src/views/i18n-demo/**",
+      "src/views/icons/**",
+      "src/views/login/**",
+      "src/views/nested/**",
+      "src/views/pdf/**",
+      "src/views/permission/**",
+      "src/views/profile/**",
+      "src/views/redirect/**",
+      "src/views/tab/**",
+      "src/views/table/**",
+      "src/views/theme/**",
+      "src/views/zip/**",
+      "src/views/organizers-management/company/**",
+      "src/views/system-management/warehouse-management/**"
+    ]
+  },
+  "jsRules": {},
+  "rules": {
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 2],
+    "no-consecutive-blank-lines": false,
+    "ordered-imports": false
+  },
+  "rulesDirectory": []
+}

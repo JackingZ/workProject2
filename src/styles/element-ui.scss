@@ -1,0 +1,62 @@
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+//表单中标题与输入框垂直对齐
+//.el-form-item__label {
+//  float: none;
+//}
+//.el-form-item__content {
+//  margin-left: 0px !important;
+//}
+
+//选择器去除底部条
+// .el-select-dropdown__wrap {
+//   margin-bottom: -18px !important;
+// }
+
+//表格的表头错位问题
+
+// .el-table th.gutter {
+//   display: table-cell !important;
+// }
+
+.el-table--medium td,
+.el-table--medium th {
+  padding: 5px 0 !important;
+}
+
+// 开关
+.switchStyle .el-switch__label {
+  position: absolute;
+  display: none;
+  color: #fff;
+}
+.switchStyle .el-switch__label--left {
+  z-index: 9;
+  left: 21px;
+}
+.switchStyle .el-switch__label--right {
+  z-index: 9;
+  left: -3px;
+}
+.switchStyle .el-switch__label.is-active {
+  display: block;
+}
+.switchStyle.el-switch .el-switch__core,
+.el-switch .el-switch__label {
+  width: 55px!important;
+  // z-index:1;
+}
+.el-switch__label.is-active{
+  z-index:1;
+}
+
+// 表格tooltip
+.el-tooltip__popper {
+  max-width: 700px;
+}
